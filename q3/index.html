@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Name Input</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        input {
+            font-size: 18px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 id="displayName">Enter your name</h2>
+    <input type="text" id="nameInput" placeholder="Enter your name" />
+
+    <script>
+        const input = document.getElementById('nameInput');
+        const heading = document.getElementById('displayName');
+
+        input.addEventListener('input', function () {
+            // Only allow a-z, A-Z, and space
+            const regex = /^[a-zA-Z\s]*$/;
+            const validInput = input.value.match(regex) ? input.value : input.value.replace(/[^a-zA-Z\s]/g, '');
+            input.value = validInput;
+            heading.textContent = validInput.trim() ? validInput : 'Enter your name';
+        });
+    </script>
+
+</body>
+</html>

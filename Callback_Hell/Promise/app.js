@@ -13,10 +13,14 @@ function saveToDb(data){
 saveToDb("shrawan").
 then(()=>{
     console.log("promise was fulfiled 1");
-    return saveToDb("apna college")
+    return saveToDb("apna college");
 })
 .then(()=>{
     console.log("promise was fullfiled 2");
+    return saveToDb("hello");
+})
+.then(()=>{
+       console.log("data 3 was saved");
 })
 
 .catch(()=>{

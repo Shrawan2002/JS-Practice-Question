@@ -16,7 +16,11 @@ function getChange(color,delay){
 }
 
  async function demo(){
-   await getChange("red", 1000);
-   await getChange("green", 1000);
-   await getChange("yellow", 1000);
+  try{
+    await getChange("red", 1000);
+    await getChange("green", 1000);
+    await getChange("yellow", 1000);
+  }catch(err){
+    console.log("result of promise", err);
+  }
 }

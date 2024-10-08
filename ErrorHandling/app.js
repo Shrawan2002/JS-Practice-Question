@@ -24,3 +24,5 @@ function getChange(color,delay){
     console.log("result of promise", err);
   }
 }
+
+demo();
